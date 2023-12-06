@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.GenericLifecycleObserver;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.DecimalFormat;
@@ -34,6 +35,8 @@ public class DiaDiemAdapter extends RecyclerView.Adapter<DiaDiemAdapter.ViewHold
         holder.tvvitri.setText(""+dsDD.get(position).getDiem());
         holder.tvvitri.setText(dsDD.get(position).getVitri());
         holder.imgAnh.setImageResource(getMipmapResID(holder.itemView,dsDD.get(position).getAnh()));
+
+
     }
 
     private int getMipmapResID(View view, String mipMapName){
