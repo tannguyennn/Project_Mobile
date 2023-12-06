@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="300dp"
     android:layout_height="250dp"
-    android:layout_margin="10dp">
+    android:layout_margin="10dp"
+    android:background="@color/white">
 
     <ImageView
         android:id="@+id/imgpic"
@@ -12,12 +13,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="44dp"
-        android:src="@tools:sample/avatars"
+        android:src="@mipmap/vinpearl_hp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@mipmap/vinpearl_hp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -35,11 +35,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:src="@tools:sample/avatars"
+            android:src="@mipmap/star"
             app:layout_constraintBottom_toBottomOf="@+id/tvdiem"
             app:layout_constraintEnd_toStartOf="@+id/tvdiem"
-            app:layout_constraintTop_toTopOf="@+id/tvdiem"
-            tools:srcCompat="@mipmap/star" />
+            app:layout_constraintTop_toTopOf="@+id/tvdiem" />
 
         <TextView
             android:id="@+id/tvdiem"
@@ -72,10 +71,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:src="@tools:sample/avatars"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="35dp"
-            tools:srcCompat="@mipmap/marker" />
+            android:layout_marginBottom="17dp"
+            android:src="@mipmap/marker"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/tvtendd"

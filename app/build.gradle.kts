@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.nguyentanlap.myapplication"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.nguyentanlap.myapplication"
