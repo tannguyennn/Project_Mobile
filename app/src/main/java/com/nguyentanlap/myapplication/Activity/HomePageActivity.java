@@ -1,10 +1,14 @@
-package com.nguyentanlap.myapplication;
+package com.nguyentanlap.myapplication.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+
+import com.nguyentanlap.myapplication.Adapter.DiaDiemAdapter;
+import com.nguyentanlap.myapplication.classdata.DiaDiem;
+import com.nguyentanlap.myapplication.R;
 
 import java.util.ArrayList;
 

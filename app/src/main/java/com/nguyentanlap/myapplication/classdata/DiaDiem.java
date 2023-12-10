@@ -1,4 +1,4 @@
-package com.nguyentanlap.myapplication;
+package com.nguyentanlap.myapplication.classdata;
 
 public class DiaDiem {
     private String ddiem;

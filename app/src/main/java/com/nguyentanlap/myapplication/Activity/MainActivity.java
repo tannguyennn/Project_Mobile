@@ -1,4 +1,4 @@
-package com.nguyentanlap.myapplication;
+package com.nguyentanlap.myapplication.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -6,6 +6,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.nguyentanlap.myapplication.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         btnIntro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,HomePageActivity.class);
+                Intent intent = new Intent(MainActivity.this, HomePageActivity.class);
                 startActivity(intent);
             }
         });

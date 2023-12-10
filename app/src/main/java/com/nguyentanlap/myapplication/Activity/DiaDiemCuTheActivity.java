@@ -1,8 +1,10 @@
-package com.nguyentanlap.myapplication;
+package com.nguyentanlap.myapplication.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.nguyentanlap.myapplication.R;
 
 public class DiaDiemCuTheActivity extends AppCompatActivity {
 
