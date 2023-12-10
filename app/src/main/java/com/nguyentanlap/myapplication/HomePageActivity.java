@@ -19,11 +19,11 @@ public class HomePageActivity extends AppCompatActivity {
 
         ArrayList<DiaDiem> dsDiaDiem = new ArrayList<>();
 
-        dsDiaDiem.add(new DiaDiem("Vinpearl","Hòn Tre,Vĩnh Nguyên",4.8,"nhatrang_hp"));
-        dsDiaDiem.add(new DiaDiem("Dảo khỉ","xã Ninh Phú, Ninh Hoà",4.0,"doakhi_hp"));
+        dsDiaDiem.add(new DiaDiem("Vinpearl","98B/13, Trần Phú, Lộc Thọ",4.8,"vinpearl_hp"));
+        dsDiaDiem.add(new DiaDiem("Viện Hải dương học","số 1, Cầu Đá, Trần Phú",4.0,"vienhdh_hp"));
         dsDiaDiem.add(new DiaDiem("Tháp Bà Ponagar"," Đường 2 Tháng 4, Vĩnh Phước",4.5,"thapba_hp"));
-        dsDiaDiem.add(new DiaDiem("Vịnh vân phong","Vạn Ninh",4.8,"vinhvanphong_hp"));
-        dsDiaDiem.add(new DiaDiem("Thác Yangbay","Khánh Phú, Khánh Vĩnh",4.3,"yangbay_hp"));
+        dsDiaDiem.add(new DiaDiem("Nhà thờ Đá Nha Trang","31 Thái Nguyên, Phước Tân",4.8,"nhathoda_hp"));
+        dsDiaDiem.add(new DiaDiem("Đảo Hòn Tằm","Vĩnh Nguyên",4.3,"hontam_hp"));
 
         recyclerViewĐiaiem = findViewById(R.id.rvDD);
         recyclerViewĐiaiem.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
