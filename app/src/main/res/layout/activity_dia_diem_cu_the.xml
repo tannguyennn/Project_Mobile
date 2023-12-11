@@ -4,6 +4,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.DiaDiemCuTheActivity">
+    android:padding="5dp"
+    tools:context=".Activity.DiaDiemCuTheActivity"
+    android:background="@color/white">
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTenDD"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="100dp"
+        android:gravity="center"
+        android:text="Nhà thờ Đá Nha Trang"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_hpDD"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:src="@mipmap/nhathoda_hp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTenDD"
+        />
+
+    <TextView
+        android:id="@+id/tvDiaChiDD"
+        android:layout_width="380dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:padding="5dp"
+        android:text="Địa chỉ: 31 Thái Nguyên, Phước Tân, Thành phố Nha Trang."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_hpDD" />
+
+    <TextView
+        android:id="@+id/tvGioiThieuDD"
+        android:layout_width="380dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:padding="3dp"
+        android:text="Nhà thờ Đá Nha Trang là một địa danh nổi tiếng của thành phố, nơi đây mang nhiều giá trị lịch sử và văn hóa hơn  một nhà thờ tôn giáo thông thường.Nhà thờ Đá Nha Trang được xây dựng hoàn toàn từ những viên đá lập thể theo lối kiến trúc hình khối đặc trưng của Phương Tây. "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDiaChiDD" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAnhDD"
+        android:layout_width="380dp"
+        android:layout_height="290dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGioiThieuDD" />
 </androidx.constraintlayout.widget.ConstraintLayout>

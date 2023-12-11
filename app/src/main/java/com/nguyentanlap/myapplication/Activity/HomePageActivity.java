@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.nguyentanlap.myapplication.Adapter.DiaDiemAdapter;
 import com.nguyentanlap.myapplication.classdata.DiaDiem;
@@ -33,6 +34,8 @@ public class HomePageActivity extends AppCompatActivity {
         recyclerViewĐiaiem.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
         adapter = new DiaDiemAdapter(dsDiaDiem);
         recyclerViewĐiaiem.setAdapter(adapter);
+
+
 
         
     }
