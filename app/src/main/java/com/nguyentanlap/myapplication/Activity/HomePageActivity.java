@@ -5,17 +5,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.view.View;
 
 import com.nguyentanlap.myapplication.Adapter.DiaDiemAdapter;
 import com.nguyentanlap.myapplication.classdata.DiaDiem;
 import com.nguyentanlap.myapplication.R;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class HomePageActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
-    private RecyclerView recyclerViewĐiaiem;
+    private RecyclerView recyclerViewDiaDiem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,16 +27,35 @@ public class HomePageActivity extends AppCompatActivity {
 
         ArrayList<DiaDiem> dsDiaDiem = new ArrayList<>();
 
-        dsDiaDiem.add(new DiaDiem("Vinpearl","98B/13, Trần Phú, Lộc Thọ",4.8,"vinpearl_hp"));
-        dsDiaDiem.add(new DiaDiem("Viện Hải dương học","số 1, Cầu Đá, Trần Phú",4.0,"vienhdh_hp"));
-        dsDiaDiem.add(new DiaDiem("Tháp Bà Ponagar"," Đường 2 Tháng 4, Vĩnh Phước",4.5,"thapba_hp"));
-        dsDiaDiem.add(new DiaDiem("Nhà thờ Đá Nha Trang","31 Thái Nguyên, Phước Tân",4.8,"nhathoda_hp"));
-        dsDiaDiem.add(new DiaDiem("Đảo Hòn Tằm","Vĩnh Nguyên",4.3,"hontam_hp"));
+        String fileName = "diadiemcuthe.txt";
+        String ma,ten,diaChi,gioiThieu,anhhp,anh1,anh2,anh3;
+        double diem;
+        try {
+            BufferedReader in = new BufferedReader(new FileReader(fileName));
+            ma = in.readLine();
+            while (ma != null) {
+                ten = in.readLine();
+                diaChi = in.readLine();
+                diem = Double.parseDouble(in.readLine());
+                gioiThieu = in.readLine();
+                anhhp = in.readLine();
+                anh1 = in.readLine();
+                anh2 = in.readLine();
+                anh3 = in.readLine();
 
-        recyclerViewĐiaiem = findViewById(R.id.rvDD);
-        recyclerViewĐiaiem.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
+                dsDiaDiem.add(new DiaDiem(ten,diaChi,diem,gioiThieu,anhhp,anh1,anh2,anh3));
+            }
+            in.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        recyclerViewDiaDiem = findViewById(R.id.rvDD);
+        recyclerViewDiaDiem.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
         adapter = new DiaDiemAdapter(dsDiaDiem);
-        recyclerViewĐiaiem.setAdapter(adapter);
+        recyclerViewDiaDiem.setAdapter(adapter);
 
 
 

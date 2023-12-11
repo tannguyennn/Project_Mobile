@@ -1,5 +1,7 @@
 package com.nguyentanlap.myapplication.Adapter;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.nguyentanlap.myapplication.Activity.DiaDiemCuTheActivity;
 import com.nguyentanlap.myapplication.classdata.DiaDiem;
 import com.nguyentanlap.myapplication.R;
 
@@ -17,11 +20,9 @@ import java.util.ArrayList;
 
 public class DiaDiemAdapter extends RecyclerView.Adapter<DiaDiemAdapter.ViewHolder> {
     ArrayList<DiaDiem> dsDD;
-    DecimalFormat format;
 
     public DiaDiemAdapter(ArrayList<DiaDiem> dsDD) {
         this.dsDD = dsDD;
-        format = new DecimalFormat("###,###,###,###,###");
     }
 
     @NonNull
@@ -32,12 +33,20 @@ public class DiaDiemAdapter extends RecyclerView.Adapter<DiaDiemAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DiaDiemAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull DiaDiemAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.tvdiadiem.setText(dsDD.get(position).getDdiem());
         holder.tvvitri.setText(""+dsDD.get(position).getDiem());
         holder.tvvitri.setText(dsDD.get(position).getVitri());
         holder.imgAnh.setImageResource(getMipmapResID(holder.itemView,dsDD.get(position).getAnh()));
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(holder.itemView.getContext(), DiaDiemCuTheActivity.class);
+                intent.putExtra("object", (CharSequence) dsDD.get(position));
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
 
     }
 
