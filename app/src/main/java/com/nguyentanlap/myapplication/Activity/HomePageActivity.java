@@ -31,6 +31,8 @@ public class HomePageActivity extends AppCompatActivity {
         String ma,ten,diaChi,gioiThieu,anhhp,anh1,anh2,anh3;
         double diem;
         try {
+            AssetManager assetManager = context.getAssets();
+            InputStream inputStream = assetManager.open(fileName);
             BufferedReader in = new BufferedReader(new FileReader(fileName));
             ma = in.readLine();
             while (ma != null) {

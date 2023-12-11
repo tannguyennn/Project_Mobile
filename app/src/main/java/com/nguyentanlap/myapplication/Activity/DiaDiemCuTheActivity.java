@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,6 +31,7 @@ public class DiaDiemCuTheActivity extends AppCompatActivity {
     private TextView tvDiaChiDD;
     private TextView tvGioiThieuDD;
     private ImageView imgAnhHP;
+    private ImageView btnback;
 
 
     @Override
@@ -38,6 +41,14 @@ public class DiaDiemCuTheActivity extends AppCompatActivity {
 
         getWidget();
         setVariable();
+
+        btnback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DiaDiemCuTheActivity.this,HomePageActivity.class);
+                startActivity(intent);
+            }
+        });
 
         recyclerViewDiaDiemCT.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         adapter =new DiaDiemCuTheAdapter(listAnh);
@@ -68,5 +79,6 @@ public class DiaDiemCuTheActivity extends AppCompatActivity {
         tvGioiThieuDD = findViewById(R.id.tvGioiThieuDD);
         imgAnhHP = findViewById(R.id.img_hpDD);
         recyclerViewDiaDiemCT = findViewById(R.id.rvAnhDD);
+        btnback = findViewById(R.id.btnIntro);
     }
 }
