@@ -23,9 +23,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class DiaDiemCuTheActivity extends AppCompatActivity {
-    private RecyclerView.Adapter adapter;
+    private DiaDiemCuTheAdapter adapter;
     private RecyclerView recyclerViewDiaDiemCT;
-    private DiaDiem item;
     private ArrayList<AnhCT> listAnh = new ArrayList<>();
     private TextView tvTenDD;
     private TextView tvDiaChiDD;
@@ -55,17 +54,25 @@ public class DiaDiemCuTheActivity extends AppCompatActivity {
         recyclerViewDiaDiemCT.setAdapter(adapter);
     }
 
-    void setVariable()
+    public void setVariable()
     {
-        item = (DiaDiem) getIntent().getSerializableExtra("object");
-        tvTenDD.setText(item.getDdiem());
-        tvDiaChiDD.setText(item.getVitri());
-        tvGioiThieuDD.setText(item.getGioiThieu());
-        imgAnhHP.setImageResource(getMipmapResID(this.getCurrentFocus(),item.getAnh()));
+        Intent intent = getIntent();
+        String dDiem = intent.getStringExtra("diadiem");
+        tvTenDD.setText(dDiem);
+        String dChi = intent.getStringExtra("diachi");
+        tvDiaChiDD.setText("Địa chỉ: "+dChi);
+        String gThieu = intent.getStringExtra("gioithieu");
+        tvGioiThieuDD.setText(gThieu);
+        String anhHP = intent.getStringExtra("anhhp");
 
-        listAnh.add(new AnhCT(item.getAnh_p1()));
-        listAnh.add(new AnhCT(item.getAnh_p2()));
-        listAnh.add(new AnhCT(item.getAnh_p3()));
+        imgAnhHP.setImageResource(getMipmapResID(this.imgAnhHP,anhHP));
+
+        String anh1 = intent.getStringExtra("anh1");
+        String anh2 = intent.getStringExtra("anh2");
+        String anh3 = intent.getStringExtra("anh3");
+        listAnh.add(new AnhCT(anh1));
+        listAnh.add(new AnhCT(anh2));
+        listAnh.add(new AnhCT(anh3));
 
     }
     private int getMipmapResID(View view, String mipMapName){
@@ -74,11 +81,11 @@ public class DiaDiemCuTheActivity extends AppCompatActivity {
     }
 
     void getWidget(){
-        tvTenDD= findViewById(R.id.tvtendd);
+        tvTenDD= findViewById(R.id.tvTenDD);
         tvDiaChiDD = findViewById(R.id.tvDiaChiDD);
         tvGioiThieuDD = findViewById(R.id.tvGioiThieuDD);
         imgAnhHP = findViewById(R.id.img_hpDD);
         recyclerViewDiaDiemCT = findViewById(R.id.rvAnhDD);
-        btnback = findViewById(R.id.btnIntro);
+        btnback = findViewById(R.id.btnback);
     }
 }

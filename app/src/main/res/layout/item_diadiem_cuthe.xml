@@ -3,13 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="400dp"
-    android:layout_height="300dp">
+    android:layout_height="300dp"
+    android:layout_gravity="center|top">
 
     <ImageView
         android:id="@+id/imgAnhCT"
         android:layout_width="400dp"
-        android:layout_height="297dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
         android:layout_marginBottom="3dp"
+        android:scaleType="fitXY"
         android:src="@mipmap/hontam_p1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

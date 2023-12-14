@@ -38,11 +38,11 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
+        android:scaleType="fitXY"
         android:src="@mipmap/nhathoda_hp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTenDD"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/tvTenDD" />
 
     <TextView
         android:id="@+id/tvDiaChiDD"
@@ -53,6 +53,7 @@
         android:layout_marginEnd="10dp"
         android:padding="5dp"
         android:text="Địa chỉ: 31 Thái Nguyên, Phước Tân, Thành phố Nha Trang."
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_hpDD" />
@@ -66,6 +67,7 @@
         android:layout_marginEnd="10dp"
         android:padding="3dp"
         android:text="Nhà thờ Đá Nha Trang là một địa danh nổi tiếng của thành phố, nơi đây mang nhiều giá trị lịch sử và văn hóa hơn  một nhà thờ tôn giáo thông thường.Nhà thờ Đá Nha Trang được xây dựng hoàn toàn từ những viên đá lập thể theo lối kiến trúc hình khối đặc trưng của Phương Tây. "
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDiaChiDD" />

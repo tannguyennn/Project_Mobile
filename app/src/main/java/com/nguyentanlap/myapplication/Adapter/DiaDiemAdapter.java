@@ -21,6 +21,11 @@ import java.util.ArrayList;
 public class DiaDiemAdapter extends RecyclerView.Adapter<DiaDiemAdapter.ViewHolder> {
     ArrayList<DiaDiem> dsDD;
 
+    private OnNotificationItemClickListener listener;
+
+    public void setOnNotificationItemClickListener(OnNotificationItemClickListener listener) {
+        this.listener = listener;
+    }
     public DiaDiemAdapter(ArrayList<DiaDiem> dsDD) {
         this.dsDD = dsDD;
     }
@@ -42,12 +47,17 @@ public class DiaDiemAdapter extends RecyclerView.Adapter<DiaDiemAdapter.ViewHold
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(holder.itemView.getContext(), DiaDiemCuTheActivity.class);
-                intent.putExtra("object", (CharSequence) dsDD.get(position));
-                holder.itemView.getContext().startActivity(intent);
+                int currentPosition = holder.getAdapterPosition();
+                if (listener != null && currentPosition != RecyclerView.NO_POSITION) {
+                    listener.onNotificationItemClick(dsDD.get(currentPosition));
+                }
+
             }
         });
 
+    }
+    public interface OnNotificationItemClickListener{
+        void onNotificationItemClick(DiaDiem item);
     }
 
     private int getMipmapResID(View view, String mipMapName){
