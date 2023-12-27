@@ -54,6 +54,8 @@ public class DiaDiemCuTheActivity extends AppCompatActivity {
         recyclerViewDiaDiemCT.setAdapter(adapter);
     }
 
+
+    //Phương thức nhận dữ liệu từ HomePageActivity
     public void setVariable()
     {
         Intent intent = getIntent();
@@ -67,6 +69,7 @@ public class DiaDiemCuTheActivity extends AppCompatActivity {
 
         imgAnhHP.setImageResource(getMipmapResID(this.imgAnhHP,anhHP));
 
+        //Add vào list ảnh để adapter
         String anh1 = intent.getStringExtra("anh1");
         String anh2 = intent.getStringExtra("anh2");
         String anh3 = intent.getStringExtra("anh3");

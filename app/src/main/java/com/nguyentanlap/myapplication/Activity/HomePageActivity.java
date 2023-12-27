@@ -28,6 +28,7 @@ public class HomePageActivity extends AppCompatActivity {
 
         ArrayList<DiaDiem> dsDiaDiem = new ArrayList<>();
 
+        //Dữ liệu
         dsDiaDiem.add(new DiaDiem("Vinpearl Land","98B/13, Trần Phú, Lộc Thọ.",4.8,
                 "vinpearl_hp",
                 "Toạ lạc trên đảo Hòn Tre xinh đẹp giữa biển khơi và bãi biển trong xanh quanh năm, Vinpearl Land được biết đến như điểm đến du lịch Nha Trang – “thiên đường của miền nhiệt đới” hấp dẫn mọi du khách.",
@@ -67,8 +68,9 @@ public class HomePageActivity extends AppCompatActivity {
         adapter.setOnNotificationItemClickListener(new DiaDiemAdapter.OnNotificationItemClickListener() {
             @Override
             public void onNotificationItemClick(DiaDiem item) {
-//
+
                 Intent intent = new Intent(HomePageActivity.this, DiaDiemCuTheActivity.class);
+                //push dữ liệu cho DiaDiemCuTheActivity
                 intent.putExtra("diadiem",item.getDdiem() );
                 intent.putExtra("diachi",item.getVitri() );
                 intent.putExtra("gioithieu",item.getGioiThieu() );
@@ -85,8 +87,5 @@ public class HomePageActivity extends AppCompatActivity {
         adapter = new DiaDiemAdapter(dsDiaDiem);
         recyclerViewDiaDiem.setAdapter(adapter);
 
-
-
-        
     }
 }

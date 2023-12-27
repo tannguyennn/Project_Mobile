@@ -23,9 +23,12 @@ public class DiaDiemAdapter extends RecyclerView.Adapter<DiaDiemAdapter.ViewHold
 
     private OnNotificationItemClickListener listener;
 
+    //Tạo sự kiện click item cho adapter
     public void setOnNotificationItemClickListener(OnNotificationItemClickListener listener) {
         this.listener = listener;
     }
+
+    //phươn thức khởi tạo
     public DiaDiemAdapter(ArrayList<DiaDiem> dsDD) {
         this.dsDD = dsDD;
     }
@@ -51,7 +54,6 @@ public class DiaDiemAdapter extends RecyclerView.Adapter<DiaDiemAdapter.ViewHold
                 if (listener != null && currentPosition != RecyclerView.NO_POSITION) {
                     listener.onNotificationItemClick(dsDD.get(currentPosition));
                 }
-
             }
         });
 
