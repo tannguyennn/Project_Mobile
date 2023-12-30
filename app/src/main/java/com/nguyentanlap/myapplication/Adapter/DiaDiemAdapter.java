@@ -51,7 +51,7 @@ public class DiaDiemAdapter extends RecyclerView.Adapter<DiaDiemAdapter.ViewHold
             @Override
             public void onClick(View v) {
                 int currentPosition = holder.getAdapterPosition();
-                if (listener != null && currentPosition != RecyclerView.NO_POSITION) {
+                if (listener != null ) {
                     listener.onNotificationItemClick(dsDD.get(currentPosition));
                 }
             }
