@@ -61,7 +61,8 @@ public class HomePageActivity extends AppCompatActivity {
 
 
         recyclerViewDiaDiem = findViewById(R.id.rvDD);
-        recyclerViewDiaDiem.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        recyclerViewDiaDiem.setLayoutManager(new LinearLayoutManager(this,
+                LinearLayoutManager.HORIZONTAL, false));
         adapter = new DiaDiemAdapter(dsDiaDiem);
         recyclerViewDiaDiem.setAdapter(adapter);
 
